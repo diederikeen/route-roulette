@@ -1,0 +1,22 @@
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  padding: var(--padding-lg);
+  box-shadow: 0px 4px 12px rgba(31, 31, 31, 0.1);
+}
+
+.sm {
+  padding: var(--padding-sm);
+}
+
+.md {
+  padding: var(--padding-md);
+}
+
+.lg {
+  padding: var(--padding-lg);
+}
+
+.xlg {
+  padding: var(--padding-xlg);
+}

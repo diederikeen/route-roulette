@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+:root {
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --padding-md: 16px;
+  --padding-lg: 24px;
+  --padding-xlg: 32px;
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 16px;
+  --spacing-xlg: 24px;
+  --spacing-xxlg: 32px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
