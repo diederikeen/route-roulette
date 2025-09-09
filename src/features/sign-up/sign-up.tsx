@@ -3,7 +3,6 @@ import { Input } from "src/components/input/input";
 
 import { supabase } from "src/lib/supabase.client";
 
-import styles from "./sign-up.module.css";
 import { useState } from "react";
 import { Button } from "src/components/button/button";
 
@@ -44,9 +43,7 @@ export function SignUpFeature() {
   }
 
   return (
-    <div className={styles.content}>
-      <h2>Register</h2>
-
+    <div>
       <Input
         onChange={(e) => setEmail(e.currentTarget.value)}
         name="email"

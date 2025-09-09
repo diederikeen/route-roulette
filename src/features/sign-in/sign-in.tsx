@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Input } from "src/components/input/input";
 import { supabase } from "src/lib/supabase.client";
 
-import styles from "./sign-in.module.css";
 import { Button } from "src/components/button/button";
 import { ACCOUNT_STATUS } from "src/types";
 
@@ -42,8 +41,7 @@ export function SignInFeature() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <h3>Or sign in</h3>
+    <div>
       <Input
         label="Email"
         name="email"

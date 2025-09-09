@@ -7,7 +7,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
-import "./base.module.css";
+import tailwindCSS from "./base.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -23,6 +23,7 @@ export const Route = createRootRoute({
         title: "TanStack Start Starter",
       },
     ],
+    links: [{ rel: "stylesheet", href: tailwindCSS }],
   }),
   component: RootComponent,
 });
