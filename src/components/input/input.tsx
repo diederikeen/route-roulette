@@ -1,5 +1,4 @@
 import { HTMLInputTypeAttribute } from "react";
-import styles from "./input.module.css";
 
 interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -19,14 +18,17 @@ export function Input({
   required,
 }: Props) {
   return (
-    <div className={styles.wrapper}>
+    <div className="flex flex-col">
       {label && (
-        <label htmlFor={name} className={styles.label}>
+        <label
+          htmlFor={name}
+          className="block text-gray-400 mb-1 text-xs uppercase font-semibold"
+        >
           {label}
         </label>
       )}
       <input
-        className={styles.input}
+        className="bg-gray-200 px-2 h-[2rem] rounded-xs w-full"
         name={name}
         onChange={onChange}
         type={type}
