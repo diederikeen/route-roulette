@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build"
+    "build": "vite build",
+    "generate:types": "npx supabase gen types typescript --project-id aijasjbrduzyrnqlyykh --schema public > src/types/database.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.52.1",
     "@tailwindcss/vite": "^4.1.13",
+    "@tanstack/react-query": "^5.89.0",
     "@tanstack/react-router": "^1.129.8",
     "@tanstack/react-start": "^1.129.8",
     "clsx": "^2.1.1",
