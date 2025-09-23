@@ -25,7 +25,6 @@ export function SignInFeature() {
 
     if (hasError) {
       setError(error.message);
-
       return;
     }
 
@@ -36,12 +35,13 @@ export function SignInFeature() {
     }
 
     router.navigate({
-      to: "/dashboard",
+      to: "/app/dashboard",
     });
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-3 mb-9">
+      <h2 className="mb-2 text-2xl text-gray-200">Sign in</h2>
       <Input
         label="Email"
         name="email"
@@ -57,7 +57,7 @@ export function SignInFeature() {
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <Button type="button" onClick={signInWithEmail}>
+      <Button type="button" onClick={signInWithEmail} classNames="self-start">
         Sign In
       </Button>
     </div>

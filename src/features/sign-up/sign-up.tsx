@@ -25,7 +25,6 @@ export function SignUpFeature() {
 
     if (signupError) {
       setError(signupError.message);
-
       return;
     }
 
@@ -43,7 +42,8 @@ export function SignUpFeature() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-3 mb-9">
+      <h2 className="mb-2 text-2xl text-gray-200">Sign up</h2>
       <Input
         onChange={(e) => setEmail(e.currentTarget.value)}
         name="email"
@@ -58,7 +58,9 @@ export function SignUpFeature() {
       />
 
       {error && <p>{error}</p>}
-      <Button onClick={signUpNewUser}>sign up</Button>
+      <Button onClick={signUpNewUser} classNames="self-start">
+        sign up
+      </Button>
     </div>
   );
 }
