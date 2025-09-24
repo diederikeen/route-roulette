@@ -30,6 +30,13 @@ export function SignUpFeature() {
 
     // TODO: Do error handling
     if (data) {
+      // Create profile
+      if (data.user?.id) {
+        supabase.from("profiles").insert({
+          id: data.user?.id,
+        });
+      }
+
       if (error) {
         setError(undefined);
       }

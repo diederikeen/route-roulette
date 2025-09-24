@@ -46,8 +46,9 @@ function RouteComponent() {
 
   useEffect(() => {
     async function updateDatabase() {
-      supabase.from("profiles").insert({
+      supabase.from("profiles").update({
         id: user?.id!,
+        strava_id: data?.data?.athlete.id,
         access_token: data?.data?.access_token,
         strava_photo: data?.data?.athlete.profile_medium,
         strava_country: data?.data?.athlete.country,
