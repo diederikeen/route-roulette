@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { supabase } from "src/lib/supabase.client";
 import { useAuth } from "src/providers/auth-provider";
-import { StravaInitalCall } from "src/schemas";
+import { StravaInitalCallSchema } from "src/schemas";
 import z from "zod";
 
 export const Route = createFileRoute("/strava-callback")({
@@ -28,7 +28,7 @@ async function getStravaCode(code: string) {
   });
 
   const data = await response.json();
-  return StravaInitalCall.safeParse(data);
+  return StravaInitalCallSchema.safeParse(data);
 }
 
 function RouteComponent() {
@@ -46,15 +46,17 @@ function RouteComponent() {
 
   useEffect(() => {
     async function updateDatabase() {
-      supabase.from("profiles").update({
-        id: user?.id!,
-        strava_id: data?.data?.athlete.id,
-        access_token: data?.data?.access_token,
-        strava_photo: data?.data?.athlete.profile_medium,
-        strava_country: data?.data?.athlete.country,
-        expires_at: data?.data?.expires_at,
-        refresh_token: data?.data?.refresh_token,
-      });
+      supabase
+        .from("profiles")
+        .update({
+          strava_id: data?.data?.athlete.id,
+          access_token: data?.data?.access_token,
+          strava_photo: data?.data?.athlete.profile_medium,
+          strava_country: data?.data?.athlete.country,
+          expires_at: data?.data?.expires_at,
+          refresh_token: data?.data?.refresh_token,
+        })
+        .eq("id", user?.id!);
     }
 
     if (!isLoading && !fetchError && user !== null) {

@@ -13,9 +13,9 @@ function DashboardComponent() {
   return (
     <AuthProvider>
       <ProfileProvider>
-        <div className="h-dvh bg-gray-100">
-          <main className="flex w-full h-full">
-            <Nav />
+        <div className="h-dvh bg-gray-100 flex">
+          <Nav />
+          <main className="pl-12 py-3 w-full h-full">
             <Outlet />
           </main>
         </div>
